@@ -18,17 +18,21 @@ import org.jsoup.select.Elements;
 
 /**
  *
- * @author Elev
+ * @author Patrick Kulevski
  */
 public class Program {
+
+    /**
+     * 
+     */
     public static void main(String[] args) {
         try{
             Document doc = Jsoup.connect("https://m.imdb.com/title/tt2527338/").get();
             Elements body = doc.select("h1");
-           // for(Element h1){ 
-             //   String title = h1.select("h1").get(0).html();
-                //String imgSRC = tr.select("td.posterColumn img").get(0).attr("src");
-              //  saveImg(imgSRC, title);
+           // for(Element h1){ //for loop för att få ut bilder och title
+             //   String title = h1.select("h1").get(0).html();// tar första title
+                //String imgSRC = tr.select("td.posterColumn img").get(0).attr("src"); //väljer ut alla bilder som ligger innanför td taggar och img
+              //  saveImg(imgSRC, title);// sparar img och title
               System.out.println("Title");
                System.out.println(body.get(0).html());
                System.out.println("");
@@ -62,7 +66,7 @@ public class Program {
    // public static void saveImg(String imgURL, String movieTitle)throws MalformedURLException, IOException{
      //   URL url = new URL(imgURL);
        // BufferedImage img = ImageIO.read(url);
-        //File file = new File("C:\\Users\\Elev\\Pictures\\Saved Pictures" + movieTitle + ".jpg");
+        //File file = new File("C:\\Users\\Elev\\Pictures\\Saved Pictures" + movieTitle + ".jpg"); //sparar bilderna i filen C:\\Users\\Elev\\Pictures\\Saved Pictures"
         //ImageIO.write(img, "jpg", file);
     //}
 }
